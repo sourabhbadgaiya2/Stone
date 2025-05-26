@@ -23,9 +23,6 @@ const app = express();
 app.use(
   cors({
     origin: Config.CLIENT_URL, // Allow requests from the client URL
-    optionsSuccessStatus: 200, // For legacy browser support
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allowed HTTP methods
-    allowedHeaders: "Content-Type, Authorization", // Allowed headers
     credentials: true, // Allow cookies to be sent
   })
 );

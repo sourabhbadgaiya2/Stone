@@ -20,11 +20,11 @@ export default function AuthPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
     dispatch(ShowLoading());
     try {
-      dispatch(loginUser({ email: loginEmail, password: loginPassword }));
+      await dispatch(loginUser({ email: loginEmail, password: loginPassword }));
       navigate("/");
     } catch (error) {
       console.log(error);
