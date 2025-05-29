@@ -41,9 +41,9 @@ export const login = async (req, res, next) => {
     // Generate token (assuming you have a method for this)
     const token = await user.generateAuthToken();
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: Config.NODE_ENV === "production",
-      sameSite: Config.NODE_ENV ? "None" : "Lax",
+      httpOnly: false,
+      // secure: Config.NODE_ENV === "production",
+      // sameSite: Config.NODE_ENV ? "None" : "Lax",
       maxAge: 24 * 60 * 60 * 1000, // 1 day
     });
 
