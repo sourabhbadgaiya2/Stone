@@ -103,7 +103,7 @@ const ProductionEntryForm = ({ onFormSubmit }) => {
     }));
   };
 
-  const handleProductChange = (e) => {
+  const handleProductChange = (e) => {   
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -172,14 +172,16 @@ const ProductionEntryForm = ({ onFormSubmit }) => {
   }, []);
 
   return (
+    <>
     <div>
+
       <button
         onClick={() => setShowForm(true)}
-        className='px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center'
+        className='px-4 py-2   relative top-2 md:left-261  left-4  bg-[#5161BC] text-white rounded-md hover:bg-[#3e4da0] transition-colors flex items-center'
       >
         <FiPlus className='mr-2' /> Add Production
       </button>
-
+      
       {showForm && (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50'>
           <div className='bg-white rounded-xl shadow-lg border border-gray-200 p-6 w-full max-w-5xl max-h-[90vh] overflow-y-auto'>
@@ -366,7 +368,7 @@ const ProductionEntryForm = ({ onFormSubmit }) => {
         </div>
       )}
 
-      <div style={{ padding: "20px" }}>
+      <div style={{ marginTop:"10px" }}>
         <h2>Inventory Items</h2>
         <DataTable
           columns={columns}
@@ -380,6 +382,8 @@ const ProductionEntryForm = ({ onFormSubmit }) => {
         />
       </div>
     </div>
+    </>
+
   );
 };
 
